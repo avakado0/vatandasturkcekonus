@@ -36,8 +36,9 @@ def get_user_input(text):
     save_as = input("Save file as (e.g., 'output'): ")
 
     timestamp = generate_timestamp()
-    save_as = f"{save_as}---{timestamp}" if save_as else timestamp
-    save_as = f"{save_as}.mp3"
+    save_as = f"../files/output/{save_as}---{timestamp}" if save_as else timestamp
+    if not save_as:
+        save_as = f"../files/output/{save_as}.mp3"
 
     return text, language, speed, save_as
 
